@@ -1,7 +1,7 @@
 /* ============================================
    SURBHI EXPLAINS — DESIGN SYSTEM
-   Version 1.0
-   "Dusty Rose Terminal"
+   Version 2.0
+   "Cream & Ink"
 ============================================ */
 
 /* --- GOOGLE FONTS IMPORT --- */
@@ -10,22 +10,22 @@
 /* --- COLOR TOKENS --- */
 :root {
   /* Backgrounds */
-  --bg-primary: #110f0f;
-  --bg-secondary: #1c1917;
-  --bg-hover: #242120;
+  --bg-primary: #fafaf8;
+  --bg-secondary: #f2f2ee;
+  --bg-hover: #eaeae4;
 
   /* Text */
-  --text-primary: #faf7f5;
-  --text-secondary: #a89e9a;
-  --text-disabled: #5c5451;
+  --text-primary: #111110;
+  --text-secondary: #666660;
+  --text-disabled: #aaaaa0;
 
   /* Accent */
-  --accent: #d4877a;
-  --accent-hover: #e09a8d;
-  --accent-muted: #8c4a42;
+  --accent: #7b68ee;
+  --accent-hover: #9080f5;
+  --accent-muted: #c8c0f8;
 
   /* Border */
-  --border: #2c2826;
+  --border: #e0e0d8;
 
   /* Fonts */
   --font-display: "Playfair Display", Georgia, serif;
