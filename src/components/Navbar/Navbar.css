@@ -1,0 +1,124 @@
+/* ============================================
+   NAVBAR
+============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: var(--space-4) var(--space-7);
+  transition:
+    background var(--transition-normal),
+    transform var(--transition-normal),
+    border-color var(--transition-normal);
+  border-bottom: 1px solid transparent;
+}
+
+/* After scrolling — add dark background */
+.navbar--scrolled {
+  background: rgba(17, 15, 15, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--border);
+}
+
+/* Hide navbar — slide it up */
+.navbar--hidden {
+  transform: translateY(-100%);
+}
+
+.navbar__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- LOGO --- */
+.navbar__logo {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.navbar__logo:hover {
+  color: var(--accent);
+}
+
+/* --- LINKS --- */
+.navbar__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.navbar__links a {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+/* Underline animation on hover */
+.navbar__links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width var(--transition-normal);
+}
+
+.navbar__links a:hover {
+  color: var(--text-primary);
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+
+/* Contact CTA — slightly different */
+.navbar__cta {
+  color: var(--accent) !important;
+  border: 1px solid var(--accent-muted);
+  padding: 6px 16px;
+  border-radius: 2px;
+  transition: all var(--transition-normal) !important;
+}
+
+.navbar__cta:hover {
+  background: var(--accent) !important;
+  color: var(--bg-primary) !important;
+}
+
+.navbar__cta::after {
+  display: none !important;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: var(--space-3);
+  }
+
+  .navbar__links {
+    gap: var(--space-4);
+  }
+
+  .navbar__links li:not(:last-child) {
+    display: none;
+  }
+}
