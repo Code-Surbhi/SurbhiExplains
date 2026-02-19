@@ -1,4 +1,5 @@
 import "./Devlog.css";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const entries = [
   {
@@ -47,9 +48,7 @@ function DevlogCard({ entry }) {
       </div>
 
       <div className="devlog-card__number">{entry.id}</div>
-
       <h3 className="devlog-card__title">{entry.title}</h3>
-
       <p className="devlog-card__excerpt">{entry.excerpt}</p>
 
       <div className="devlog-card__footer">
@@ -67,11 +66,16 @@ function DevlogCard({ entry }) {
 }
 
 function Devlog() {
+  const [ref, isVisible] = useScrollReveal();
   const featured = entries.find((e) => e.featured);
   const rest = entries.filter((e) => !e.featured);
 
   return (
-    <section className="devlog" id="devlog">
+    <section
+      className={`devlog reveal ${isVisible ? "visible" : ""}`}
+      id="devlog"
+      ref={ref}
+    >
       <div className="devlog__inner">
         <div className="devlog__header">
           <p className="label">Building in Public</p>
@@ -84,17 +88,14 @@ function Devlog() {
           </div>
         </div>
 
-        {/* Featured Entry */}
         <DevlogCard entry={featured} />
 
-        {/* Remaining Entries */}
         <div className="devlog__grid">
           {rest.map((entry) => (
             <DevlogCard key={entry.id} entry={entry} />
           ))}
         </div>
 
-        {/* Bottom CTA */}
         <div className="devlog__cta">
           <p
             className="font-mono"

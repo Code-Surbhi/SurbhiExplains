@@ -172,3 +172,22 @@
     font-size: clamp(42px, 12vw, 64px);
   }
 }
+
+.btn--resume {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  letter-spacing: 0.08em;
+  padding: 14px 28px;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px dashed var(--border);
+  text-decoration: none;
+  display: inline-block;
+  transition: all var(--transition-normal);
+}
+
+.btn--resume:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

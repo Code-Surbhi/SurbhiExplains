@@ -1,4 +1,5 @@
 import "./Notes.css";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const notes = [
   {
@@ -67,8 +68,14 @@ function NoteCard({ note }) {
 }
 
 function Notes() {
+  const [ref, isVisible] = useScrollReveal();
+
   return (
-    <section className="notes" id="notes">
+    <section
+      className={`notes reveal ${isVisible ? "visible" : ""}`}
+      id="notes"
+      ref={ref}
+    >
       <div className="notes__inner">
         <div className="notes__header">
           <p className="label">Knowledge Base</p>

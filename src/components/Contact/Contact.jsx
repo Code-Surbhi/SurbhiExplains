@@ -1,4 +1,5 @@
 import "./Contact.css";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const socials = [
   {
@@ -40,8 +41,14 @@ const socials = [
 ];
 
 function Contact() {
+  const [ref, isVisible] = useScrollReveal();
+
   return (
-    <section className="contact" id="contact">
+    <section
+      className={`contact reveal ${isVisible ? "visible" : ""}`}
+      id="contact"
+      ref={ref}
+    >
       <div className="contact__inner">
         <div className="contact__header">
           <p className="label">Get in Touch</p>

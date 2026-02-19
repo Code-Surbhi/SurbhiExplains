@@ -1,41 +1,28 @@
 import "./About.css";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const facts = [
-  {
-    label: "Status",
-    value: "Student & Builder",
-  },
-  {
-    label: "Focus",
-    value: "Cloud Engineering",
-  },
-  {
-    label: "Certifications",
-    value: "AWS CCP · AWS AI Practitioner",
-  },
-  {
-    label: "Interests",
-    value: "Cloud · DevOps · AI · Teaching",
-  },
-  {
-    label: "Currently",
-    value: "Building in public",
-  },
-  {
-    label: "Goal",
-    value: "Cloud Engineer who ships and explains",
-  },
+  { label: "Status", value: "Student & Builder" },
+  { label: "Focus", value: "Cloud Engineering" },
+  { label: "Certifications", value: "AWS CCP · AWS AI Practitioner" },
+  { label: "Interests", value: "Cloud · DevOps · AI · Teaching" },
+  { label: "Currently", value: "Building in public" },
+  { label: "Goal", value: "Cloud Engineer who ships and explains" },
 ];
 
 function About() {
+  const [ref, isVisible] = useScrollReveal();
+
   return (
-    <section className="about" id="about">
+    <section
+      className={`about reveal ${isVisible ? "visible" : ""}`}
+      id="about"
+      ref={ref}
+    >
       <div className="about__inner">
-        {/* Section Label */}
         <p className="label about__label">About</p>
 
         <div className="about__grid">
-          {/* Left — Narrative */}
           <div className="about__narrative">
             <h2 className="about__title">
               I'm a student who decided
@@ -76,7 +63,6 @@ function About() {
             </div>
           </div>
 
-          {/* Right — Facts */}
           <div className="about__facts">
             <div className="about__facts-inner">
               <p className="label about__facts-label">Quick Facts</p>

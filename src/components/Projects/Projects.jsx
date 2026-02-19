@@ -1,4 +1,5 @@
 import "./Projects.css";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const projects = [
   {
@@ -51,7 +52,6 @@ function ProjectCard({ project }) {
       </div>
 
       <h3 className="project-card__title">{project.title}</h3>
-
       <p className="project-card__description">{project.description}</p>
 
       <div className="project-card__stack">
@@ -91,22 +91,24 @@ function ProjectCard({ project }) {
 }
 
 function Projects() {
+  const [ref, isVisible] = useScrollReveal();
   const featured = projects.find((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section className="projects" id="projects">
+    <section
+      className={`projects reveal ${isVisible ? "visible" : ""}`}
+      id="projects"
+      ref={ref}
+    >
       <div className="projects__inner">
-        {/* Section Header */}
         <div className="projects__header">
           <p className="label">Selected Work</p>
           <h2 className="projects__title">Projects</h2>
         </div>
 
-        {/* Featured Project */}
         <ProjectCard project={featured} />
 
-        {/* Grid of remaining projects */}
         <div className="projects__grid">
           {rest.map((project) => (
             <ProjectCard key={project.id} project={project} />

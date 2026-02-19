@@ -1,4 +1,5 @@
 import "./Certifications.css";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 const certifications = [
   {
@@ -53,9 +54,7 @@ function CertCard({ cert }) {
       </div>
 
       <div className="cert-card__code">{cert.code}</div>
-
       <h3 className="cert-card__title">{cert.title}</h3>
-
       <p className="cert-card__description">{cert.description}</p>
 
       <div className="cert-card__footer">
@@ -78,8 +77,14 @@ function CertCard({ cert }) {
 }
 
 function Certifications() {
+  const [ref, isVisible] = useScrollReveal();
+
   return (
-    <section className="certifications" id="certifications">
+    <section
+      className={`certifications reveal ${isVisible ? "visible" : ""}`}
+      id="certifications"
+      ref={ref}
+    >
       <div className="certifications__inner">
         <div className="certifications__header">
           <p className="label">Credentials</p>

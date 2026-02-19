@@ -28,6 +28,14 @@ function Hero() {
             <a href="#devlog" className="btn btn--ghost">
               Read the Devlog →
             </a>
+            <a
+              href="/resume/surbhi-singh-resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn--resume"
+            >
+              Resume ↓
+            </a>
           </div>
         </div>
 
