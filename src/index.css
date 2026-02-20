@@ -58,6 +58,20 @@
   --transition-slow: 500ms ease;
 }
 
+/* --- DARK MODE TOKENS --- */
+body.dark {
+  --bg-primary: #110f0f;
+  --bg-secondary: #1c1917;
+  --bg-hover: #242120;
+  --text-primary: #faf7f5;
+  --text-secondary: #a89e9a;
+  --text-disabled: #5c5451;
+  --accent: #d4877a;
+  --accent-hover: #e09a8d;
+  --accent-muted: #8c4a42;
+  --border: #2c2826;
+}
+
 /* --- RESET & BASE --- */
 *,
 *::before,

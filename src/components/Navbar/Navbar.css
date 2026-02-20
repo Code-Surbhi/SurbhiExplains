@@ -19,7 +19,8 @@
 
 /* After scrolling */
 .navbar--scrolled {
-  background: rgba(250, 250, 248, 0.92);
+  background: var(--bg-primary);
+  opacity: 0.95;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--border);
@@ -201,4 +202,33 @@
   .navbar__burger {
     display: flex;
   }
+}
+
+/* --- NAVBAR RIGHT GROUP --- */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* --- THEME TOGGLE --- */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }

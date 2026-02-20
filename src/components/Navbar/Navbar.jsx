@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,12 +28,10 @@ function Navbar() {
       className={`navbar ${scrolled ? "navbar--scrolled" : ""} ${hidden ? "navbar--hidden" : ""}`}
     >
       <div className="navbar__inner">
-        {/* Logo */}
         <a href="#" className="navbar__logo">
           SE<span className="text-accent">.</span>
         </a>
 
-        {/* Desktop Links */}
         <ul className="navbar__links">
           <li>
             <a href="#about">about</a>
@@ -44,10 +43,10 @@ function Navbar() {
             <a href="#certifications">certifications</a>
           </li>
           <li>
-            <a href="#notes">notes</a>
+            <a href="#devlog">devlog</a>
           </li>
           <li>
-            <a href="#devlog">devlog</a>
+            <a href="#notes">notes</a>
           </li>
           <li>
             <a href="#contact" className="navbar__cta">
@@ -56,16 +55,18 @@ function Navbar() {
           </li>
         </ul>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="navbar__burger"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={`burger-line ${menuOpen ? "open" : ""}`} />
-          <span className={`burger-line ${menuOpen ? "open" : ""}`} />
-          <span className={`burger-line ${menuOpen ? "open" : ""}`} />
-        </button>
+        <div className="navbar__right">
+          <ThemeToggle />
+          <button
+            className="navbar__burger"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`burger-line ${menuOpen ? "open" : ""}`} />
+            <span className={`burger-line ${menuOpen ? "open" : ""}`} />
+            <span className={`burger-line ${menuOpen ? "open" : ""}`} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Dropdown */}
