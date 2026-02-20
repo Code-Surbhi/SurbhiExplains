@@ -1,0 +1,133 @@
+/* ============================================
+   404 NOT FOUND PAGE
+============================================ */
+
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-7);
+  position: relative;
+  overflow: hidden;
+}
+
+.notfound__inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+/* --- BIG 404 NUMBER --- */
+.notfound__code {
+  font-family: var(--font-display);
+  font-size: clamp(120px, 20vw, 220px);
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  user-select: none;
+  transition: color var(--transition-slow);
+}
+
+.notfound__code:hover {
+  color: var(--accent-muted);
+}
+
+/* --- CONTENT --- */
+.notfound__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.notfound__label {
+  display: block;
+}
+
+.notfound__title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.notfound__description {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+/* --- BUTTONS --- */
+.notfound__actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.btn--primary {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  letter-spacing: 0.08em;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all var(--transition-normal);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  letter-spacing: 0.08em;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all var(--transition-normal);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent-muted);
+  color: var(--accent);
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+  .notfound__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-5);
+  }
+
+  .notfound__code {
+    font-size: clamp(80px, 25vw, 140px);
+    text-align: center;
+  }
+
+  .notfound__description {
+    margin: 0 auto;
+  }
+
+  .notfound__actions {
+    justify-content: center;
+  }
+}

@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -7,8 +8,9 @@ import Devlog from "./components/Devlog/Devlog";
 import Notes from "./components/Notes/Notes";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import NotFound from "./components/NotFound/NotFound";
 
-function App() {
+function Home() {
   return (
     <main>
       <Navbar />
@@ -21,6 +23,26 @@ function App() {
       <Contact />
       <Footer />
     </main>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="*"
+          element={
+            <>
+              <Navbar />
+              <NotFound />
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
