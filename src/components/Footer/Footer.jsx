@@ -11,7 +11,7 @@ function Footer() {
             SE<span className="text-accent">.</span>
           </span>
           <p className="footer__tagline">
-            Surbhi Explains — Cloud Engineering & Building in Public
+            Surbhi Explains - Explaining and Building in Public
           </p>
         </div>
 

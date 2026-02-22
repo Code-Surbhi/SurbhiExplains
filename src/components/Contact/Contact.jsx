@@ -90,8 +90,8 @@ function Contact() {
             </button>
           </div>
           <p className="contact__availability">
-            Open to cloud engineering internships, collaborations, and
-            conversations about tech.
+            Open to internships, work, collaborations, and conversations about
+            tech.
           </p>
         </div>
 
