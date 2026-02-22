@@ -1,19 +1,18 @@
+import { useState } from "react";
 import "./Notes.css";
 import useScrollReveal from "../../hooks/useScrollReveal";
 
 const notes = [
   {
     id: "001",
-    status: "coming-soon",
     category: "AWS",
     title: "IAM — Identity & Access Management, Explained Simply",
     description:
       "Users, roles, policies, and permissions. Everything I wish someone had explained to me in plain English before I touched the AWS console.",
-    pdf: "/notes/Surbhi_Resume (1).pdf",
+    pdf: null,
   },
   {
     id: "002",
-    status: "coming-soon",
     category: "Cloud Concepts",
     title: "The Difference Between Regions, AZs, and Edge Locations",
     description:
@@ -22,7 +21,6 @@ const notes = [
   },
   {
     id: "003",
-    status: "coming-soon",
     category: "DevOps",
     title: "What a CI/CD Pipeline Actually Does — Step by Step",
     description:
@@ -31,7 +29,6 @@ const notes = [
   },
   {
     id: "004",
-    status: "coming-soon",
     category: "React",
     title: "useState vs useEffect — When to Use Which",
     description:
@@ -39,6 +36,9 @@ const notes = [
     pdf: null,
   },
 ];
+
+// Dynamically build category list from notes
+const allCategories = ["All", ...new Set(notes.map((n) => n.category))];
 
 function NoteCard({ note }) {
   return (
@@ -69,6 +69,12 @@ function NoteCard({ note }) {
 
 function Notes() {
   const [ref, isVisible] = useScrollReveal();
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filtered =
+    activeCategory === "All"
+      ? notes
+      : notes.filter((n) => n.category === activeCategory);
 
   return (
     <section
@@ -88,10 +94,28 @@ function Notes() {
           </div>
         </div>
 
-        <div className="notes__grid">
-          {notes.map((note) => (
-            <NoteCard key={note.id} note={note} />
+        {/* Category Filter Buttons */}
+        <div className="notes__filters">
+          {allCategories.map((cat) => (
+            <button
+              key={cat}
+              className={`notes__filter-btn ${activeCategory === cat ? "notes__filter-btn--active" : ""}`}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {cat}
+            </button>
           ))}
+        </div>
+
+        {/* Notes Grid */}
+        <div className="notes__grid">
+          {filtered.length > 0 ? (
+            filtered.map((note) => <NoteCard key={note.id} note={note} />)
+          ) : (
+            <p className="notes__empty font-mono">
+              ◌ No notes in this category yet — coming soon.
+            </p>
+          )}
         </div>
 
         <div className="notes__substack">
