@@ -60,6 +60,19 @@
 
 /* --- DARK MODE TOKENS --- */
 body.dark {
+  --bg-primary: #1c1b1f;
+  --bg-secondary: #242229;
+  --bg-hover: #2c2a32;
+  --text-primary: #f0eef8;
+  --text-secondary: #a09cb0;
+  --text-disabled: #5c5870;
+  --accent: #9080f5;
+  --accent-hover: #a593ff;
+  --accent-muted: #3d3666;
+  --border: #2e2b38;
+}
+
+/* body.dark {
   --bg-primary: #110f0f;
   --bg-secondary: #1c1917;
   --bg-hover: #242120;
@@ -70,7 +83,7 @@ body.dark {
   --accent-hover: #e09a8d;
   --accent-muted: #8c4a42;
   --border: #2c2826;
-}
+} */
 
 /* --- RESET & BASE --- */
 *,
