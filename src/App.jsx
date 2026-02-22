@@ -13,10 +13,30 @@ import BackToTop from "./components/BackToTop/BackToTop";
 import ReadingProgressBar from "./components/ReadingProgressBar/ReadingProgressBar";
 import Experience from "./components/Experience/Experience";
 import Education from "./components/Education/Education";
+import CommandPalette from "./components/CommandPalette/CommandPalette";
+
+import { useState, useEffect } from "react";
 
 function Home() {
+  const [paletteOpen, setPaletteOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+        e.preventDefault();
+        setPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
   return (
     <main>
+      <CommandPalette
+        isOpen={paletteOpen}
+        onClose={() => setPaletteOpen(false)}
+      />
       <ReadingProgressBar />
       <Navbar />
       <Hero />
@@ -33,7 +53,6 @@ function Home() {
     </main>
   );
 }
-
 function App() {
   return (
     <BrowserRouter>

@@ -1,6 +1,24 @@
 import "./Projects.css";
 import useScrollReveal from "../../hooks/useScrollReveal";
 
+const tooltips = {
+  React: "UI component framework",
+  Vite: "Lightning-fast build tool",
+  "React Router": "Client-side routing + 404 handling",
+  CSS3: "Custom design system — no frameworks",
+  "AWS S3": "Static file hosting on AWS",
+  CloudFront: "AWS CDN — global edge delivery",
+  ACM: "Free SSL certificate from AWS",
+  IAM: "AWS identity and access management",
+  "GitHub Actions": "CI/CD automation pipeline",
+  "GoDaddy DNS": "Domain name routing",
+  YAML: "Workflow configuration language",
+  "Node.js": "JavaScript runtime",
+  npm: "Package manager",
+  "AWS CodeDeploy": "AWS automated deployment service",
+  DevOps: "Development and operations practices",
+};
+
 const projects = [
   {
     id: "01",
@@ -24,27 +42,35 @@ const projects = [
     link: "https://surbhiexplains.com",
     github: "https://github.com/Code-Surbhi/SurbhiExplains",
   },
-  // {
-  //   id: "02",
-  //   featured: false,
-  //   status: "in-progress",
-  //   title: "AWS Cloud Project",
-  //   description:
-  //     "Exploring core AWS services hands-on — IAM, EC2, S3, and VPC networking. Documenting architecture decisions and lessons learned publicly.",
-  //   stack: ["AWS", "IAM", "EC2", "S3", "VPC"],
-  //   link: null,
-  //   github: null,
-  // },
+  {
+    id: "02",
+    featured: false,
+    status: "in-progress",
+    title: "AWS Cloud Project",
+    description:
+      "Exploring core AWS services hands-on — IAM, EC2, S3, and VPC networking. Documenting architecture decisions and lessons learned publicly.",
+    stack: ["AWS S3", "IAM", "CloudFront"],
+    link: null,
+    github: null,
+  },
   // {
   //   id: "03",
   //   featured: false,
-  //   status: "in-progress",
-  //   title: "CI/CD Pipeline",
+  //   status: "live",
+  //   title: "GitHub Actions CI/CD Pipeline",
   //   description:
-  //     "Building an automated deployment pipeline to understand how code moves from a developer's laptop to production. Learning GitHub Actions and AWS CodeDeploy.",
-  //   stack: ["GitHub Actions", "AWS CodeDeploy", "DevOps"],
-  //   link: null,
-  //   github: null,
+  //     "Automated deployment pipeline that deploys surbhiexplains.com on every git push — no manual uploads ever. GitHub Actions builds the React site, syncs it to AWS S3 with smart cache headers, and invalidates CloudFront automatically. Full deployment completes in under 30 seconds.",
+  //   stack: [
+  //     "GitHub Actions",
+  //     "YAML",
+  //     "AWS S3",
+  //     "CloudFront",
+  //     "IAM",
+  //     "Node.js",
+  //     "npm",
+  //   ],
+  //   link: "https://www.surbhiexplains.com",
+  //   github: "https://github.com/Code-Surbhi/SurbhiExplains",
   // },
 ];
 
@@ -67,7 +93,11 @@ function ProjectCard({ project }) {
 
       <div className="project-card__stack">
         {project.stack.map((tech) => (
-          <span key={tech} className="project-card__tag">
+          <span
+            key={tech}
+            className="project-card__tag"
+            data-tooltip={tooltips[tech] || tech}
+          >
             {tech}
           </span>
         ))}

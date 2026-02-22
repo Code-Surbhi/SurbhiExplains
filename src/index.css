@@ -56,6 +56,8 @@
   --transition-fast: 150ms ease;
   --transition-normal: 300ms ease;
   --transition-slow: 500ms ease;
+
+  scroll-behavior: smooth;
 }
 
 /* --- DARK MODE TOKENS --- */
@@ -224,4 +226,39 @@ a:hover {
 }
 .reveal--delay-3 {
   transition-delay: 300ms;
+}
+
+/* ============================================
+   STACK TAG TOOLTIPS
+============================================ */
+
+[data-tooltip] {
+  position: relative;
+  cursor: default;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-primary);
+  border: 1px solid var(--accent-muted);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  padding: 6px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
 }
