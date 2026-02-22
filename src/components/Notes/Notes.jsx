@@ -5,36 +5,36 @@ import useScrollReveal from "../../hooks/useScrollReveal";
 const notes = [
   {
     id: "001",
-    category: "AWS",
-    title: "IAM — Identity & Access Management, Explained Simply",
+    category: "Java",
+    title: "My Java Notes — Everything I Wish I Knew Before Starting",
     description:
-      "Users, roles, policies, and permissions. Everything I wish someone had explained to me in plain English before I touched the AWS console.",
+      "A comprehensive guide to Java fundamentals, OOP concepts, and practical tips based on my learning journey. Perfect for beginners looking to get started with Java.",
     pdf: null,
   },
   {
     id: "002",
-    category: "Cloud Concepts",
-    title: "The Difference Between Regions, AZs, and Edge Locations",
+    category: "AWS Labs Notes (coming soon)",
+    title: "Your all in one guide to AWS Labs",
     description:
-      "A visual breakdown of AWS global infrastructure — why it matters for real architecture decisions.",
+      "A comprehensive guide to AWS Labs, covering key concepts, architecture diagrams, and simplified explanations for each lab in the AWS Learning Path. Perfect for anyone looking to master AWS through hands-on practice.",
     pdf: null,
   },
-  {
-    id: "003",
-    category: "DevOps",
-    title: "What a CI/CD Pipeline Actually Does — Step by Step",
-    description:
-      "From git push to production. How automated pipelines work and why every engineer needs to understand them.",
-    pdf: null,
-  },
-  {
-    id: "004",
-    category: "React",
-    title: "useState vs useEffect — When to Use Which",
-    description:
-      "The two hooks I use most. A practical, no-fluff guide based on what I actually ran into while building this site.",
-    pdf: null,
-  },
+  // {
+  //   id: "003",
+  //   category: "DevOps",
+  //   title: "What a CI/CD Pipeline Actually Does — Step by Step",
+  //   description:
+  //     "From git push to production. How automated pipelines work and why every engineer needs to understand them.",
+  //   pdf: null,
+  // },
+  // {
+  //   id: "004",
+  //   category: "Web Development",
+  //   title: "useState vs useEffect — When to Use Which",
+  //   description:
+  //     "The two hooks I use most. A practical, no-fluff guide based on what I actually ran into while building this site.",
+  //   pdf: null,
+  // },
 ];
 
 // Dynamically build category list from notes

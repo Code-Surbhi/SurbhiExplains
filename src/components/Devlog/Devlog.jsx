@@ -7,35 +7,35 @@ const entries = [
     id: "001",
     featured: true,
     date: "Feb 2026",
-    tag: "Design & Engineering",
-    title: "Building my design system before writing a single component",
+    tag: "The Making of surbhiexplains.com",
+    title: "From Idea to URL — Building SurbhiExplains",
     excerpt:
-      "Most people jump straight into code. I spent an entire session defining colors, typography, and spacing tokens before touching a single JSX file — and it changed everything about how the site feels.",
-    readTime: "5 min read",
+      "From my first messy sketch to a live domain, I’m sharing the real story of how I brought this space to life. I’m navigating the late-night breakthroughs and the 'why isn't this working?' lows of modern web development in real-time. No fluff, no filters just my authentic journey from behind the screen as I learn, build, and grow.",
+    // readTime: "5 min read",
     link: null,
   },
   {
     id: "002",
     featured: false,
     date: "Feb 2026",
-    tag: "React",
-    title: "What I learned building my first real React component",
-    excerpt:
-      "The Hero section taught me more about layout thinking than any tutorial ever did. Here's exactly what broke and how I fixed it.",
-    readTime: "4 min read",
-    link: null,
-  },
-  {
-    id: "003",
-    featured: false,
-    date: "Feb 2026",
     tag: "AWS",
-    title: "Deploying to AWS S3 + CloudFront for the first time",
+    title: "I deployed my first AWS project : CloudCost",
     excerpt:
-      "Free tier, custom domain, SSL certificate. A step-by-step account of everything that confused me and the exact commands that worked.",
-    readTime: "7 min read",
+      "CloudCost Sentinel is a full-stack, event-driven monitoring system designed to prevent accidental AWS credit exhaustion for students and startups. The project integrates AWS Cost Explorer with a React frontend to provide real-time cost intelligence, proactive forecasting, and SNS-based alerts.",
+    // readTime: "4 min read",
     link: null,
   },
+  // {
+  //   id: "003",
+  //   featured: false,
+  //   date: "Feb 2026",
+  //   tag: "AWS",
+  //   title: "Deploying to AWS S3 + CloudFront for the first time",
+  //   excerpt:
+  //     "Free tier, custom domain, SSL certificate. A step-by-step account of everything that confused me and the exact commands that worked.",
+  //   // readTime: "7 min read",
+  //   link: null,
+  // },
 ];
 
 // Dynamically build tags from entries
