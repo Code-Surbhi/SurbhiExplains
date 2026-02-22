@@ -2,23 +2,40 @@ import { useState, useEffect } from "react";
 import "./Navbar.css";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
+const navLinks = [
+  { label: "about", href: "#about" },
+  { label: "projects", href: "#projects" },
+  { label: "certifications", href: "#certifications" },
+  { label: "devlog", href: "#devlog" },
+  { label: "notes", href: "#notes" },
+];
+
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
       const current = window.scrollY;
       setScrolled(current > 100);
-      if (current > lastScroll && current > 100) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
+      setHidden(current > lastScroll && current > 100);
       setLastScroll(current);
+
+      // Active section detection
+      const sections = navLinks.map((l) => l.label);
+      for (const section of [...sections].reverse()) {
+        const el = document.getElementById(section);
+        if (el && window.scrollY >= el.offsetTop - 120) {
+          setActiveSection(section);
+          return;
+        }
+      }
+      setActiveSection("");
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
@@ -33,21 +50,18 @@ function Navbar() {
         </a>
 
         <ul className="navbar__links">
-          <li>
-            <a href="#about">about</a>
-          </li>
-          <li>
-            <a href="#projects">projects</a>
-          </li>
-          <li>
-            <a href="#certifications">certifications</a>
-          </li>
-          <li>
-            <a href="#devlog">devlog</a>
-          </li>
-          <li>
-            <a href="#notes">notes</a>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className={
+                  activeSection === link.label ? "navbar__link--active" : ""
+                }
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
           <li>
             <a href="#contact" className="navbar__cta">
               contact
@@ -74,31 +88,19 @@ function Navbar() {
         className={`navbar__mobile ${menuOpen ? "navbar__mobile--open" : ""}`}
       >
         <ul className="navbar__mobile-links">
-          <li>
-            <a href="#about" onClick={() => setMenuOpen(false)}>
-              about
-            </a>
-          </li>
-          <li>
-            <a href="#projects" onClick={() => setMenuOpen(false)}>
-              projects
-            </a>
-          </li>
-          <li>
-            <a href="#certifications" onClick={() => setMenuOpen(false)}>
-              certifications
-            </a>
-          </li>
-          <li>
-            <a href="#devlog" onClick={() => setMenuOpen(false)}>
-              devlog
-            </a>
-          </li>
-          <li>
-            <a href="#notes" onClick={() => setMenuOpen(false)}>
-              notes
-            </a>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={
+                  activeSection === link.label ? "navbar__link--active" : ""
+                }
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
           <li>
             <a
               href="#contact"

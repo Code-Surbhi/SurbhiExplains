@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Devlog.css";
 import useScrollReveal from "../../hooks/useScrollReveal";
 
@@ -37,6 +38,9 @@ const entries = [
   },
 ];
 
+// Dynamically build tags from entries
+const allTags = ["All", ...new Set(entries.map((e) => e.tag))];
+
 function DevlogCard({ entry }) {
   return (
     <article
@@ -67,8 +71,16 @@ function DevlogCard({ entry }) {
 
 function Devlog() {
   const [ref, isVisible] = useScrollReveal();
-  const featured = entries.find((e) => e.featured);
-  const rest = entries.filter((e) => !e.featured);
+  const [activeTag, setActiveTag] = useState("All");
+
+  const filtered =
+    activeTag === "All" ? entries : entries.filter((e) => e.tag === activeTag);
+
+  // Only show featured card when viewing All
+  const featured =
+    activeTag === "All" ? filtered.find((e) => e.featured) : null;
+  const rest =
+    activeTag === "All" ? filtered.filter((e) => !e.featured) : filtered;
 
   return (
     <section
@@ -88,13 +100,34 @@ function Devlog() {
           </div>
         </div>
 
-        <DevlogCard entry={featured} />
-
-        <div className="devlog__grid">
-          {rest.map((entry) => (
-            <DevlogCard key={entry.id} entry={entry} />
+        {/* Category Filter Buttons */}
+        <div className="devlog__filters">
+          {allTags.map((tag) => (
+            <button
+              key={tag}
+              className={`devlog__filter-btn ${activeTag === tag ? "devlog__filter-btn--active" : ""}`}
+              onClick={() => setActiveTag(tag)}
+            >
+              {tag}
+            </button>
           ))}
         </div>
+
+        {/* Featured Entry — only when All is selected */}
+        {featured && <DevlogCard entry={featured} />}
+
+        {/* Remaining Entries */}
+        {rest.length > 0 ? (
+          <div className="devlog__grid">
+            {rest.map((entry) => (
+              <DevlogCard key={entry.id} entry={entry} />
+            ))}
+          </div>
+        ) : (
+          <p className="devlog__empty font-mono">
+            ◌ No entries in this category yet — coming soon.
+          </p>
+        )}
 
         <div className="devlog__cta">
           <p

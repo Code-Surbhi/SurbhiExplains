@@ -17,7 +17,6 @@
   border-bottom: 1px solid transparent;
 }
 
-/* After scrolling */
 .navbar--scrolled {
   background: var(--bg-primary);
   opacity: 0.95;
@@ -27,7 +26,6 @@
   box-shadow: 0 1px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* Hide on scroll down */
 .navbar--hidden {
   transform: translateY(-100%);
 }
@@ -94,6 +92,15 @@
   width: 100%;
 }
 
+/* Active link */
+.navbar__link--active {
+  color: var(--accent) !important;
+}
+
+.navbar__link--active::after {
+  width: 100% !important;
+}
+
 /* Contact CTA */
 .navbar__cta {
   color: var(--accent) !important;
@@ -112,7 +119,14 @@
   display: none !important;
 }
 
-/* --- BURGER BUTTON (mobile only) --- */
+/* --- RIGHT GROUP --- */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* --- BURGER BUTTON --- */
 .navbar__burger {
   display: none;
   flex-direction: column;
@@ -132,7 +146,6 @@
   transform-origin: center;
 }
 
-/* Burger → X animation */
 .burger-line.open:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
 }
@@ -202,33 +215,4 @@
   .navbar__burger {
     display: flex;
   }
-}
-
-/* --- NAVBAR RIGHT GROUP --- */
-.navbar__right {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-/* --- THEME TOGGLE --- */
-.theme-toggle {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  font-size: 14px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition-normal);
-  flex-shrink: 0;
-}
-
-.theme-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
 }

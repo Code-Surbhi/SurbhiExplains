@@ -9,10 +9,13 @@ import Notes from "./components/Notes/Notes";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import NotFound from "./components/NotFound/NotFound";
+import BackToTop from "./components/BackToTop/BackToTop";
+import ReadingProgressBar from "./components/ReadingProgressBar/ReadingProgressBar";
 
 function Home() {
   return (
     <main>
+      <ReadingProgressBar />
       <Navbar />
       <Hero />
       <About />
@@ -22,6 +25,7 @@ function Home() {
       <Notes />
       <Contact />
       <Footer />
+      <BackToTop />
     </main>
   );
 }

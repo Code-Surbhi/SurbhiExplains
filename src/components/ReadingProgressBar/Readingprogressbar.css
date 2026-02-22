@@ -1,0 +1,21 @@
+/* ============================================
+   READING PROGRESS BAR
+============================================ */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  height: 2px;
+  background: transparent;
+  pointer-events: none;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 50ms linear;
+  border-radius: 0 2px 2px 0;
+}

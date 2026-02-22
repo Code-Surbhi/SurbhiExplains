@@ -46,7 +46,67 @@
   line-height: 1.6;
 }
 
-/* --- DEVLOG CARD (base) --- */
+/* --- FILTER BUTTONS --- */
+.devlog__filters {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.devlog__filter-btn {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all var(--transition-normal);
+}
+
+.devlog__filter-btn:hover {
+  border-color: var(--accent-muted);
+  color: var(--text-primary);
+}
+
+.devlog__filter-btn--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+.devlog__filter-btn--active:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--bg-primary);
+}
+
+/* --- FEATURED CARD --- */
+.devlog-card--featured {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background: var(--bg-secondary);
+  padding: var(--space-6);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-normal);
+}
+
+.devlog-card--featured:hover {
+  border-color: var(--accent-muted);
+  border-left-color: var(--accent);
+}
+
+.devlog-card--featured .devlog-card__number {
+  font-size: clamp(64px, 10vw, 120px);
+}
+
+/* --- REGULAR CARD --- */
 .devlog-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -54,32 +114,33 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  transition: border-color var(--transition-normal);
-  cursor: pointer;
   position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-normal);
+}
+
+.devlog-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-slow);
+}
+
+.devlog-card:hover::after {
+  transform: scaleX(1);
 }
 
 .devlog-card:hover {
   border-color: var(--accent-muted);
 }
 
-/* --- FEATURED CARD --- */
-.devlog-card--featured {
-  padding: var(--space-7);
-  border-left: 3px solid var(--accent);
-}
-
-.devlog-card--featured .devlog-card__title {
-  font-size: clamp(20px, 3vw, 28px);
-  max-width: 60ch;
-}
-
-.devlog-card--featured .devlog-card__excerpt {
-  max-width: 65ch;
-  font-size: 16px;
-}
-
-/* --- META ROW --- */
+/* --- CARD META --- */
 .devlog-card__meta {
   display: flex;
   align-items: center;
@@ -93,11 +154,11 @@
   letter-spacing: 0.08em;
 }
 
-/* --- ENTRY NUMBER --- */
+/* --- CARD NUMBER --- */
 .devlog-card__number {
-  font-family: var(--font-mono);
-  font-size: 64px;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
   color: var(--border);
   line-height: 1;
   letter-spacing: -0.04em;
@@ -109,42 +170,42 @@
   color: var(--accent-muted);
 }
 
-/* --- TITLE --- */
+/* --- CARD TITLE --- */
 .devlog-card__title {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: clamp(17px, 2vw, 22px);
   color: var(--text-primary);
   line-height: 1.3;
 }
 
-/* --- EXCERPT --- */
+/* --- CARD EXCERPT --- */
 .devlog-card__excerpt {
-  color: var(--text-secondary);
   font-size: 14px;
+  color: var(--text-secondary);
   line-height: 1.7;
+  flex: 1;
 }
 
-/* --- FOOTER --- */
+/* --- CARD FOOTER --- */
 .devlog-card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: var(--space-3);
   border-top: 1px solid var(--border);
-  margin-top: auto;
 }
 
 .devlog-card__readtime {
   font-family: var(--font-mono);
   font-size: var(--text-label);
   color: var(--text-disabled);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
 }
 
 .devlog-card__link {
   font-family: var(--font-mono);
   font-size: var(--text-label);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--accent);
   text-decoration: none;
   transition: color var(--transition-fast);
@@ -157,28 +218,40 @@
 .devlog-card__soon {
   font-family: var(--font-mono);
   font-size: var(--text-label);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--text-disabled);
 }
 
 /* --- GRID --- */
 .devlog__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-4);
 }
 
-/* --- BOTTOM CTA --- */
+/* --- EMPTY STATE --- */
+.devlog__empty {
+  font-size: var(--text-small);
+  color: var(--text-disabled);
+  letter-spacing: 0.06em;
+  padding: var(--space-8) 0;
+  text-align: center;
+}
+
+/* --- CTA --- */
 .devlog__cta {
   padding-top: var(--space-4);
   border-top: 1px solid var(--border);
-  text-align: center;
 }
 
 /* --- MOBILE --- */
 @media (max-width: 768px) {
   .devlog {
     padding: var(--space-7) var(--space-3);
+  }
+
+  .devlog__grid {
+    grid-template-columns: 1fr;
   }
 
   .devlog__header-row {
@@ -188,17 +261,5 @@
 
   .devlog__description {
     text-align: left;
-  }
-
-  .devlog__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .devlog-card--featured {
-    padding: var(--space-5);
-  }
-
-  .devlog-card__number {
-    font-size: 48px;
   }
 }

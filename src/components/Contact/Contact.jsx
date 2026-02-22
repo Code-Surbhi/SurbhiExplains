@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Contact.css";
 import useScrollReveal from "../../hooks/useScrollReveal";
 
@@ -40,8 +41,17 @@ const socials = [
   },
 ];
 
+const EMAIL = "code.surbhi1712@gmail.com";
+
 function Contact() {
   const [ref, isVisible] = useScrollReveal();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <section
@@ -66,9 +76,19 @@ function Contact() {
 
         <div className="contact__email-block">
           <p className="contact__email-label font-mono">Reach me directly</p>
-          <a href="mailto:code.surbhi1712@gmail.com" className="contact__email">
-            code.surbhi1712@gmail.com
-          </a>
+          <div className="contact__email-row">
+            <a href={`mailto:${EMAIL}`} className="contact__email">
+              {EMAIL}
+            </a>
+            <button
+              className={`contact__copy-btn ${copied ? "contact__copy-btn--copied" : ""}`}
+              onClick={handleCopy}
+              aria-label="Copy email address"
+              title="Copy email"
+            >
+              {copied ? "✓ copied" : "copy"}
+            </button>
+          </div>
           <p className="contact__availability">
             Open to cloud engineering internships, collaborations, and
             conversations about tech.
