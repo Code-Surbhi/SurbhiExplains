@@ -124,8 +124,7 @@ function Certifications() {
           <p className="label">Credentials</p>
           <h2 className="certifications__title">Certifications</h2>
           <p className="certifications__subtitle">
-            Formal validation of cloud and AI knowledge — hover a card to see
-            the badge.
+            Formal validation of cloud and AI knowledge.
           </p>
         </div>
 
