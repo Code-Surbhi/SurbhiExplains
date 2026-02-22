@@ -8,33 +8,33 @@ const projects = [
     status: "live",
     title: "surbhiexplains.com",
     description:
-      "My personal engineering brand — designed from scratch with a custom design system, built in React with Vite, and deployed on AWS using S3 static hosting, CloudFront CDN, and ACM SSL. Every visual decision was intentional. Every commit is public.",
-    stack: ["React", "Vite", "AWS S3", "CloudFront", "ACM", "Route 53"],
+      "My personal engineering brand : designed from scratch with a custom design system, built in React with Vite, and deployed on AWS using S3 static hosting, CloudFront CDN, and ACM SSL. Every visual decision was intentional. Every commit is public.",
+    stack: ["React", "Vite", "AWS S3", "CloudFront", "ACM-SSL", "DNS-GoDaddy"],
     link: "https://surbhiexplains.com",
-    github: "https://github.com/yourusername/surbhiexplains",
+    github: "https://github.com/Code-Surbhi/SurbhiExplains",
   },
-  {
-    id: "02",
-    featured: false,
-    status: "in-progress",
-    title: "AWS Cloud Project",
-    description:
-      "Exploring core AWS services hands-on — IAM, EC2, S3, and VPC networking. Documenting architecture decisions and lessons learned publicly.",
-    stack: ["AWS", "IAM", "EC2", "S3", "VPC"],
-    link: null,
-    github: null,
-  },
-  {
-    id: "03",
-    featured: false,
-    status: "in-progress",
-    title: "CI/CD Pipeline",
-    description:
-      "Building an automated deployment pipeline to understand how code moves from a developer's laptop to production. Learning GitHub Actions and AWS CodeDeploy.",
-    stack: ["GitHub Actions", "AWS CodeDeploy", "DevOps"],
-    link: null,
-    github: null,
-  },
+  // {
+  //   id: "02",
+  //   featured: false,
+  //   status: "in-progress",
+  //   title: "AWS Cloud Project",
+  //   description:
+  //     "Exploring core AWS services hands-on — IAM, EC2, S3, and VPC networking. Documenting architecture decisions and lessons learned publicly.",
+  //   stack: ["AWS", "IAM", "EC2", "S3", "VPC"],
+  //   link: null,
+  //   github: null,
+  // },
+  // {
+  //   id: "03",
+  //   featured: false,
+  //   status: "in-progress",
+  //   title: "CI/CD Pipeline",
+  //   description:
+  //     "Building an automated deployment pipeline to understand how code moves from a developer's laptop to production. Learning GitHub Actions and AWS CodeDeploy.",
+  //   stack: ["GitHub Actions", "AWS CodeDeploy", "DevOps"],
+  //   link: null,
+  //   github: null,
+  // },
 ];
 
 function ProjectCard({ project }) {
