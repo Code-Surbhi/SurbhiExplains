@@ -11,6 +11,8 @@ import Footer from "./components/Footer/Footer";
 import NotFound from "./components/NotFound/NotFound";
 import BackToTop from "./components/BackToTop/BackToTop";
 import ReadingProgressBar from "./components/ReadingProgressBar/ReadingProgressBar";
+import Experience from "./components/Experience/Experience";
+import Education from "./components/Education/Education";
 
 function Home() {
   return (
@@ -19,6 +21,8 @@ function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Experience />
+      <Education />
       <Projects />
       <Certifications />
       <Devlog />
