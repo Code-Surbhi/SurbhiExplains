@@ -1,6 +1,34 @@
+import { useState, useEffect } from "react";
 import "./Hero.css";
 
+const TAGLINE =
+  "I build cloud infrastructure, document everything, and make the complex feel approachable.";
+const TYPING_SPEED = 28; // ms per character — slower = more elegant
+const START_DELAY = 800; // ms before typing begins
+
 function Hero() {
+  const [displayed, setDisplayed] = useState("");
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    // Delay before starting
+    const startTimer = setTimeout(() => {
+      setStarted(true);
+    }, START_DELAY);
+    return () => clearTimeout(startTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    if (displayed.length >= TAGLINE.length) return;
+
+    const timer = setTimeout(() => {
+      setDisplayed(TAGLINE.slice(0, displayed.length + 1));
+    }, TYPING_SPEED);
+
+    return () => clearTimeout(timer);
+  }, [started, displayed]);
+
   return (
     <section className="hero">
       <div className="hero__inner">
@@ -17,11 +45,15 @@ function Hero() {
           </h1>
 
           <p className="hero__tagline">
-            I build cloud infrastructure, document everything, and make the
-            complex feel approachable.
+            {displayed}
+            {displayed.length < TAGLINE.length && (
+              <span className="hero__cursor">|</span>
+            )}
           </p>
 
-          <div className="hero__actions">
+          <div
+            className={`hero__actions ${displayed.length === TAGLINE.length ? "hero__actions--visible" : ""}`}
+          >
             <a href="#projects" className="btn btn--primary">
               View My Work
             </a>
