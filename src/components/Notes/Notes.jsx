@@ -35,7 +35,25 @@ const notes = [
     title: "System Design Notes : Simplified Concepts.",
     description:
       "A beginner-friendly collection of notes covering essential system design concepts and patterns",
-    parts: null,
+    parts: [
+      {
+        chapter: "Chapter 1 — AWS Services",
+        items: [
+          {
+            num: "P01",
+            title: "S3 Durability Explained",
+            pdf: "/notes/01_SD_s3_durability.pdf",
+            youtube: null,
+          },
+          {
+            num: "P02",
+            title: "Lambda Explained",
+            pdf: "/notes/01_SD_s3_durability.pdf",
+            youtube: null,
+          },
+        ],
+      },
+    ],
     pdf: null,
     youtube: null,
   },
