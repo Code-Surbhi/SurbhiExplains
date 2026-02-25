@@ -7,11 +7,11 @@
 
 ## About
 
-I'm Surbhi — a cloud engineering student at Chitkara University, AWS certified twice over, and someone who stumbled into cloud through a lab session and never looked back.
+I'm Surbhi - a cloud engineering student at Chitkara University, AWS certified twice over, and someone who stumbled into cloud through a lab session and never looked back.
 
 I passed my first AWS certification before I felt ready. That changed everything.
 
-This site is my public record of becoming a cloud engineer — the projects, the notes, the devlogs, and all the messy middle parts most people hide.
+This site is my public record of becoming a cloud engineer - the projects, the notes, the devlogs, and all the messy middle parts most people hide.
 
 ---
 
@@ -19,7 +19,7 @@ This site is my public record of becoming a cloud engineer — the projects, the
 
 Not a template. Not a theme. Every pixel was a decision.
 
-Built with a custom design system — **Cream & Ink** — crafted from scratch with CSS variables, a base-8 spacing system, and a deliberate type hierarchy. Two themes — light and dark — that feel like the same room with the lights turned up or down.
+Built with a custom design system — **Cream & Ink** — crafted from scratch with CSS variables, a base-8 spacing system, and a deliberate type hierarchy. Two themes : light and dark , that feel like the same room with the lights turned up or down.
 
 | Section            | What's Inside                                         |
 | ------------------ | ----------------------------------------------------- |
