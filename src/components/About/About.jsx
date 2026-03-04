@@ -5,7 +5,7 @@ const facts = [
   { label: "Status", value: "Student & Builder" },
   { label: "Focus", value: "Cloud Engineering" },
   { label: "Certifications", value: "AWS CCP · AWS AI Practitioner" },
-  { label: "Interests", value: "Cloud · DevOps · AI · Teaching" },
+  { label: "Interests", value: "Cloud · DevOps · AI" },
   { label: "Currently", value: "Overwhelmed but too curious to stop" },
   { label: "Goal", value: "Cloud Engineer who ships and explains" },
 ];

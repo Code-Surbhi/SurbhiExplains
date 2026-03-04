@@ -1,0 +1,41 @@
+/* ============================================
+   CUSTOM CURSOR — Dot Only
+============================================ */
+
+/* Hide default cursor sitewide */
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+.cursor-dot--visible {
+  opacity: 1;
+}
+
+/* Hide on touch / mobile — restore default cursor */
+@media (hover: none) {
+  .cursor-dot {
+    display: none;
+  }
+  *,
+  *::before,
+  *::after {
+    cursor: auto !important;
+  }
+}
