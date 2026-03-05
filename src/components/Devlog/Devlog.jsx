@@ -8,7 +8,7 @@ const entries = [
     featured: true,
     date: "Feb 2026",
     tag: "The Making of surbhiexplains.com",
-    title: "From Idea to URL — Building SurbhiExplains",
+    title: "From Idea to URL : Building SurbhiExplains",
     excerpt:
       "From my first messy sketch to a live domain, I’m sharing the real story of how I brought this space to life. I’m navigating the late-night breakthroughs and the 'why isn't this working?' lows of modern web development in real-time. No fluff, no filters just my authentic journey from behind the screen as I learn, build, and grow.",
     // readTime: "5 min read",
