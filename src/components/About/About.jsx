@@ -3,9 +3,9 @@ import useScrollReveal from "../../hooks/useScrollReveal";
 
 const facts = [
   { label: "Status", value: "Student & Builder" },
-  { label: "Focus", value: "Cloud Engineering" },
+  { label: "Focus", value: "Cloud Engineering · Java Backend" },
   { label: "Certifications", value: "AWS CCP · AWS AI Practitioner" },
-  { label: "Interests", value: "Cloud · DevOps · AI" },
+  { label: "Interests", value: "Cloud · DevOps · Java · AI" },
   { label: "Currently", value: "Overwhelmed but too curious to stop" },
   { label: "Goal", value: "Cloud Engineer who ships and explains" },
 ];
@@ -46,33 +46,33 @@ function About() {
                 after the lab ended.
               </p>
               <p>
-                Then I did something that scared me. I booked the AWS Cloud
-                Practitioner exam before I felt fully ready. That decision
-                pushed me harder than I had ever studied before, and when I
-                passed with a strong score, something shifted. It wasn’t just a
-                certification. It was proof that I was capable of more than I
-                thought.
+                Around the same time, Java started making sense in a way it
+                hadn't before. Not just the syntax, but the thinking behind it.
+                OOP, Spring Boot, REST APIs, microservices, Kafka. I realized
+                that cloud and backend development aren't separate paths. They
+                converge. The best engineers understand both: how the code is
+                written and where it runs.
               </p>
               <p>
-                I kept going. I earned the AWS AI Practitioner certification
-                next, and now I’m working toward the AWS Certified Developer
-                Associate. The journey feels bigger than exams though. It’s
-                about growing into someone who builds, learns, and keeps showing
-                up even when things feel difficult.
+                So I went all in on both. I passed the AWS Cloud Practitioner
+                exam before I felt ready, then the AWS AI Practitioner. I've
+                completed courses in Core Java, Spring Boot, Microservices with
+                Docker and Kubernetes, Apache Kafka, and DevOps fundamentals.
+                Each one added a new layer to how I see systems not just as
+                services on a console, but as distributed applications that need
+                to be built, deployed, and scaled thoughtfully.
               </p>
               <p>
-                Most days, I feel overwhelmed. There’s always something new to
-                learn, another concept to understand, another idea I want to
-                build. But I’ve realized that feeling overwhelmed often means
-                you’re growing. I’ve learned to embrace it. That’s why I build
-                in public, document what I’m learning, and share the imperfect
-                middle stages instead of only the polished results.
+                Most days I feel overwhelmed. There's always another concept to
+                understand, another service to explore, another idea to build.
+                But I've learned that overwhelmed and growing are often the same
+                thing. So I build in public, document what I'm learning, and
+                share the messy middle instead of only the polished results.
               </p>
               <p className="about__closing">
-                If you’re a student wondering whether you belong in tech, you
-                do. Start before you feel ready. Learn out loud. Let your
-                progress be messy and real. That’s exactly what this website is
-                about.
+                If you're a student wondering whether you belong in tech — you
+                do. Pick a direction, go deep, and start before you feel ready.
+                That's exactly what this site is.
               </p>
             </div>
           </div>
