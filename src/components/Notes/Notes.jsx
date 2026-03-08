@@ -22,7 +22,7 @@ const notes = [
           {
             num: "P01",
             title: "Access & Tour AWS Console",
-            pdf: "public/notes/AWS_Labs/Domain 1 LAB DVA.pdf",
+            pdf: "notes/AWS_Labs/Domain 1 LAB DVA.pdf",
             youtube: null,
           },
           {
@@ -60,7 +60,7 @@ const notes = [
           {
             num: "P01",
             title: "S3 Durability Explained",
-            pdf: "public/notes/System_Design/01_SD_s3_durability.pdf",
+            pdf: "notes/System_Design/01_SD_s3_durability.pdf",
             youtube: null,
           },
           {
@@ -88,7 +88,7 @@ const notes = [
           {
             num: "P01",
             title: "Java Explained",
-            pdf: "public/notes/Java/Java.pdf",
+            pdf: "notes/Java/Java.pdf",
             youtube: null,
           },
           // {
