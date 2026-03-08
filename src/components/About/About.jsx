@@ -38,7 +38,7 @@ function About() {
 
             <div className="about__body">
               <p>
-                I didn’t expect a simple AWS lab to change anything. It was
+                I didn't expect a simple AWS lab to change anything. It was
                 supposed to be just another task to complete but somewhere along
                 the way, I got hooked. Watching cloud services connect, seeing
                 infrastructure come alive, realizing you could build something
@@ -77,8 +77,21 @@ function About() {
             </div>
           </div>
 
-          {/* Right — Facts */}
-          <div className="about__facts">
+          {/* Right — Photo + Facts */}
+          <div className="about__right">
+            {/* Style C — Tilted photo with ghost accent border */}
+            <div className="about__photo-wrap">
+              <div className="about__photo-ghost" />
+              <div className="about__photo-frame">
+                <img
+                  src="/surbhi.jpg"
+                  alt="Surbhi Singh — Cloud Engineering Student"
+                  className="about__photo-img"
+                />
+              </div>
+            </div>
+
+            {/* Quick Facts */}
             <div className="about__facts-inner">
               <p className="label about__facts-label">Quick Facts</p>
               <ul className="about__facts-list">
