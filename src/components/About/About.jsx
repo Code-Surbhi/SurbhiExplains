@@ -70,7 +70,7 @@ function About() {
                 share the messy middle instead of only the polished results.
               </p>
               <p className="about__closing">
-                If you're a student wondering whether you belong in tech — you
+                If you're a student wondering whether you belong in tech : you
                 do. Pick a direction, go deep, and start before you feel ready.
                 That's exactly what this site is.
               </p>

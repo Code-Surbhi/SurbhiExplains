@@ -22,7 +22,7 @@ const notes = [
           {
             num: "P01",
             title: "Access & Tour AWS Console",
-            pdf: "public/notes/labs/Domain 1 LAB DVA.pdf",
+            pdf: "public/notes/AWS_Labs/Domain 1 LAB DVA.pdf",
             youtube: null,
           },
           {
@@ -60,7 +60,7 @@ const notes = [
           {
             num: "P01",
             title: "S3 Durability Explained",
-            pdf: "/notes/01_SD_s3_durability.pdf",
+            pdf: "public/notes/System_Design/01_SD_s3_durability.pdf",
             youtube: null,
           },
           {
@@ -81,7 +81,31 @@ const notes = [
     title: "My Java Notes : Everything I Wish I Knew Before Starting",
     description:
       "A comprehensive guide to Java fundamentals, OOP concepts, and practical tips based on my learning journey. Perfect for beginners looking to get started with Java.",
-    parts: null,
+    parts: [
+      {
+        chapter: "Chapter 1 — Core Java",
+        items: [
+          {
+            num: "P01",
+            title: "Java Explained",
+            pdf: "public/notes/Java/Java.pdf",
+            youtube: null,
+          },
+          // {
+          //   num: "P02",
+          //   title: "Multithreading Explained",
+          //   pdf: "",
+          //   youtube: null,
+          // },
+          // {
+          //   num: "P03",
+          //   title: "",
+          //   pdf: "",
+          //   youtube: null,
+          // },
+        ],
+      },
+    ],
     pdf: null,
     youtube: null,
   },
