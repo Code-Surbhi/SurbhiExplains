@@ -40,7 +40,7 @@ const notes = [
   {
     id: "002",
     category: "AWS Theory",
-    title: "AWS Theory Notes — Core Concepts Explained Simply",
+    title: "AWS Theory Notes - Core Concepts Explained Simply",
     description:
       "A collection of concise notes covering the fundamental concepts of AWS services.",
     parts: null,
