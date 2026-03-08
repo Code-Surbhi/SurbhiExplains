@@ -15,7 +15,25 @@ const notes = [
     title: "Your All-in-One Guide to AWS Labs",
     description:
       "Broken into bite-sized parts by topic. Read at your own pace, watch the explanation, download what you need.",
-    parts: null,
+    parts: [
+      {
+        chapter: "Chapter 1 — Development with AWS Services",
+        items: [
+          {
+            num: "P01",
+            title: "Access & Tour AWS Console",
+            pdf: "public/notes/labs/Domain 1 LAB DVA.pdf",
+            youtube: null,
+          },
+          {
+            num: "P02",
+            title: "Introduction to Simple Storage Service",
+            pdf: "",
+            youtube: null,
+          },
+        ],
+      },
+    ],
     pdf: null,
     youtube: null,
   },
@@ -48,7 +66,7 @@ const notes = [
           {
             num: "P02",
             title: "Lambda Explained",
-            pdf: "/notes/01_SD_s3_durability.pdf",
+            pdf: "",
             youtube: null,
           },
         ],
