@@ -91,12 +91,12 @@ const notes = [
             pdf: "notes/Java/Java.pdf",
             youtube: null,
           },
-          // {
-          //   num: "P02",
-          //   title: "Multithreading Explained",
-          //   pdf: "",
-          //   youtube: null,
-          // },
+          {
+            num: "P02",
+            title: "Multithreading Explained",
+            pdf: "",
+            youtube: null,
+          },
           // {
           //   num: "P03",
           //   title: "",
