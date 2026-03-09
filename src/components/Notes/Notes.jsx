@@ -94,7 +94,7 @@ const notes = [
           {
             num: "P02",
             title: "Multithreading Explained",
-            pdf: "",
+            pdf: "notes/Java/Multithreading.pdf",
             youtube: null,
           },
           // {
