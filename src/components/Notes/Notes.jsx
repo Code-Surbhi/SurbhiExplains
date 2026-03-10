@@ -22,7 +22,7 @@ const notes = [
           {
             num: "P01",
             title: "Access & Tour AWS Console",
-            pdf: "public/notes/AWS_Labs/Domain 1 LAB DVA.pdf",
+            pdf: "notes/AWS_Labs/Domain 1 LAB DVA.pdf",
             youtube: null,
           },
           {
@@ -40,7 +40,7 @@ const notes = [
   {
     id: "002",
     category: "AWS Theory",
-    title: "AWS Theory Notes — Core Concepts Explained Simply",
+    title: "AWS Theory Notes : Core Concepts Explained Simply",
     description:
       "A collection of concise notes covering the fundamental concepts of AWS services.",
     parts: null,
@@ -60,7 +60,7 @@ const notes = [
           {
             num: "P01",
             title: "S3 Durability Explained",
-            pdf: "public/notes/System_Design/01_SD_s3_durability.pdf",
+            pdf: "notes/System_Design/01_SD_s3_durability.pdf",
             youtube: null,
           },
           {
@@ -88,15 +88,15 @@ const notes = [
           {
             num: "P01",
             title: "Java Explained",
-            pdf: "public/notes/Java/Java.pdf",
+            pdf: "notes/Java/Java.pdf",
             youtube: null,
           },
-          // {
-          //   num: "P02",
-          //   title: "Multithreading Explained",
-          //   pdf: "",
-          //   youtube: null,
-          // },
+          {
+            num: "P02",
+            title: "Multithreading Explained",
+            pdf: "notes/Java/Multithreading.pdf",
+            youtube: null,
+          },
           // {
           //   num: "P03",
           //   title: "",
