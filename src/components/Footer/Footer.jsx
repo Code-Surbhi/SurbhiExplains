@@ -52,13 +52,13 @@ function Footer() {
             >
               X
             </a>
-            {/* <a
+            <a
               href="https://leetcode.com/u/surbhi_code/"
               target="_blank"
               rel="noreferrer"
             >
               LeetCode
-            </a> */}
+            </a>
           </div>
           <p className="footer__copy">
             © {year} Surbhi Singh. Designed & built by me.
