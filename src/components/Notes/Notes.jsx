@@ -37,6 +37,12 @@ const notes = [
             pdf: "notes/AWS_Labs/01_staticWebsite.pdf",
             youtube: null,
           },
+          {
+            num: "P04",
+            title: "S3 Multipart Upload using AWS CLI",
+            pdf: "notes/AWS_Labs/02_S3_Multipart_Upload (2).pdf",
+            youtube: null,
+          },
         ],
       },
     ],
