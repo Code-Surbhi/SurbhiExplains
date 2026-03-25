@@ -33,12 +33,12 @@ const socials = [
     url: "https://x.com/surbhiexplains",
     description: "Thoughts in public",
   },
-  {
-    platform: "LeetCode",
-    handle: "@surbhi_code",
-    url: "https://leetcode.com/u/surbhi_code/",
-    description: "Problem solving",
-  },
+  // {
+  //   platform: "LeetCode",
+  //   handle: "@surbhi_code",
+  //   url: "https://leetcode.com/u/surbhi_code/",
+  //   description: "Problem solving",
+  // },
 ];
 
 const EMAIL = "code.surbhi1712@gmail.com";

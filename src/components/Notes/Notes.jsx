@@ -31,6 +31,12 @@ const notes = [
             pdf: "",
             youtube: null,
           },
+          {
+            num: "P03",
+            title: "Static Website Hosting with S3 ",
+            pdf: "notes/AWS_Labs/01_staticWebsite.pdf",
+            youtube: null,
+          },
         ],
       },
     ],
