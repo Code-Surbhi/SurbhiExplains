@@ -43,6 +43,12 @@ const notes = [
             pdf: "notes/AWS_Labs/02_S3_Multipart_Upload (2).pdf",
             youtube: null,
           },
+          {
+            num: "P05",
+            title: "S3 Presigned URL using CloudShell",
+            pdf: "notes/AWS_Labs/03_presigned URL using Cloudshell.pdf",
+            youtube: null,
+          },
         ],
       },
     ],
